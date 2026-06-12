@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/gofiber/fiber/v2"
 
-	"github.com/yourusername/user-management-api/internal/handler"
+	"github.com/nexusBL/user-management-api/internal/handler"
 )
 
 func Register(app *fiber.App, userHandler *handler.UserHandler) {

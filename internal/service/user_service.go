@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/yourusername/user-management-api/internal/models"
-	"github.com/yourusername/user-management-api/internal/repository"
-	"github.com/yourusername/user-management-api/internal/utils"
+	"github.com/nexusBL/user-management-api/internal/models"
+	"github.com/nexusBL/user-management-api/internal/repository"
+	"github.com/nexusBL/user-management-api/internal/utils"
 )
 
 var (

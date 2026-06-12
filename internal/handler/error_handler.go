@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"go.uber.org/zap"
 
-	"github.com/yourusername/user-management-api/internal/models"
+	"github.com/nexusBL/user-management-api/internal/models"
 )
 
 func NewErrorHandler(logger *zap.Logger) fiber.ErrorHandler {

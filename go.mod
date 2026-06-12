@@ -1,4 +1,4 @@
-module github.com/yourusername/user-management-api
+module github.com/nexusBL/user-management-api
 
 go 1.25.0
 

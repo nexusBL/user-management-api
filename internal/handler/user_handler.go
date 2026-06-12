@@ -8,9 +8,9 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
 
-	"github.com/yourusername/user-management-api/internal/models"
-	"github.com/yourusername/user-management-api/internal/repository"
-	"github.com/yourusername/user-management-api/internal/service"
+	"github.com/nexusBL/user-management-api/internal/models"
+    "github.com/nexusBL/user-management-api/internal/repository"
+    "github.com/nexusBL/user-management-api/internal/service"
 )
 
 type UserHandler struct {

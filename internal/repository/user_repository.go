@@ -6,8 +6,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/yourusername/user-management-api/internal/models"
-	sqlcgen "github.com/yourusername/user-management-api/internal/repository/sqlc"
+	"github.com/nexusBL/user-management-api/internal/models"
+	sqlcgen "github.com/nexusBL/user-management-api/internal/repository/sqlc"
 )
 
 var ErrUserNotFound = errors.New("user not found")

@@ -14,13 +14,13 @@ import (
 	_ "github.com/lib/pq"
 	"go.uber.org/zap"
 
-	"github.com/yourusername/user-management-api/config"
-	"github.com/yourusername/user-management-api/internal/handler"
-	applogger "github.com/yourusername/user-management-api/internal/logger"
-	"github.com/yourusername/user-management-api/internal/middleware"
-	"github.com/yourusername/user-management-api/internal/repository"
-	"github.com/yourusername/user-management-api/internal/routes"
-	"github.com/yourusername/user-management-api/internal/service"
+	"github.com/nexusBL/user-management-api/config"
+	"github.com/nexusBL/user-management-api/internal/handler"
+	applogger "github.com/nexusBL/user-management-api/internal/logger"
+	"github.com/nexusBL/user-management-api/internal/middleware"
+	"github.com/nexusBL/user-management-api/internal/repository"
+	"github.com/nexusBL/user-management-api/internal/routes"
+	"github.com/nexusBL/user-management-api/internal/service"
 )
 
 func main() {
