@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: user-management-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: user_management
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d user_management"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  migrate:
+    image: migrate/migrate:v4.18.1
+    container_name: user-management-migrate
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./db/migrations:/migrations
+    command:
+      [
+        "-path",
+        "/migrations",
+        "-database",
+        "postgres://postgres:postgres@postgres:5432/user_management?sslmode=disable",
+        "up"
+      ]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: user-management-api
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      APP_ENV: production
+      SERVER_PORT: 3000
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/user_management?sslmode=disable
+      DEFAULT_PAGE_LIMIT: 10
+      MAX_PAGE_LIMIT: 50
+      SHUTDOWN_TIMEOUT: 10s
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:
